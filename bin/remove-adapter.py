@@ -101,8 +101,8 @@ def linkit(file_input, file_output, kind ='soft'):
             try:
                 os.link(file_input, file_output)
             except OSError as er:
-                print >>sys.stderr,"WARNING: Cannot do hard links ('%s' and '%s')!" % (linkto,file_output)
-                shutil.copyfile(linkto, file_output)
+                print >>sys.stderr,"WARNING: Cannot do hard links ('%s' and '%s')!" % (file_input,file_output)
+                shutil.copyfile(file_input, file_output)
 #                if er.errno == errno.EXDEV:
 #                    # they are on different partitions
 #                    # [Errno 18] Invalid cross-device link
